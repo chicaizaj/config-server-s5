@@ -1,0 +1,20 @@
+server:
+  port: 0 # Configura el puerto dinámico para permitir múltiples instancias
+
+spring:
+  application:
+    name: product.microservice
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/productdb
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # Dirección de Eureka Server
+  instance:
+    appName: product.microservice  # Usar appName con N mayúscula
+
+  cloud:
+    discovery:
+      enabled: true
